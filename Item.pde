@@ -5,7 +5,12 @@ class Item {
 	float h = SOIL_SIZE;
 
 	void display(){}
-	void checkCollision(Player player){}
+
+	void checkCollision(Player player){
+    if(isHit(x, y, w, h, player.x, player.y, player.w, player.h)){
+      this.isAlive = false;
+    }
+  }
 
 	Item(float x, float y){
 		isAlive = true;
